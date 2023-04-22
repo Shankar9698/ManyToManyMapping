@@ -52,11 +52,15 @@ public class App
 
 
         Transaction transaction=session.beginTransaction();
-        session.save(e1);
+       /* session.save(e1);
         session.save(e2);
         session.save(a1);
         session.save(a2);
-        transaction.commit();
+        */transaction.commit();
+        Emp emp=session.get(Emp.class,1);
+        System.out.println(emp.getEmpId()+" : "+emp.getEmpName());
+        System.out.println(emp.getEmpAdd().size());
+
         session.close();
         sessionFactory.close();
     }
